@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AdvantureGame : MonoBehaviour {
     [SerializeField] Text textComponent;
-	
+    [SerializeField] State startingState;
+
+    State state;
+
     // Use this for initialization
-	void Start () {
-        textComponent.text = "This is my Game";
+    void Start () {
+        state = startingState;
+        textComponent.text = state.GetStateStory();
 	}
 	
 	// Update is called once per frame
